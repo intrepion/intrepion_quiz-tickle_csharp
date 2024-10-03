@@ -1,0 +1,279 @@
+{
+  "entities": [
+    {
+      "names": {
+        "entity": "Answer",
+        "human": "Answer",
+        "plural": "Answers",
+        "table": "Answers",
+        "url": "answer"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Question",
+              "human": "Question"
+            }
+          },
+          "names": {
+            "human": "Correct Question",
+            "property": "CorrectQuestion"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Ordering",
+            "property": "Ordering"
+          },
+          "type": "integer"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Answer",
+              "human": "Answer"
+            },
+            "owner": true
+          },
+          "names": {
+            "human": "Prompt",
+            "property": "Prompt"
+          },
+          "type": "oneToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Answer",
+              "human": "Answer"
+            }
+          },
+          "names": {
+            "human": "Response",
+            "property": "Response"
+          },
+          "type": "oneToOne"
+        },
+        {
+          "names": {
+            "human": "Text",
+            "property": "Text"
+          },
+          "required": true,
+          "type": "string"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Question",
+              "human": "Question"
+            }
+          },
+          "names": {
+            "human": "Question",
+            "property": "Question"
+          },
+          "type": "manyToOne"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Question",
+        "human": "Question",
+        "plural": "Questions",
+        "table": "Questions",
+        "url": "question"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Answer",
+              "human": "Answer"
+            }
+          },
+          "names": {
+            "human": "Answers",
+            "property": "Answers"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Answer",
+              "human": "Answer"
+            }
+          },
+          "names": {
+            "human": "Correct Answers",
+            "property": "CorrectAnswers"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "names": {
+              "entity": "QuestionType",
+              "human": "Question Type"
+            }
+          },
+          "names": {
+            "human": "Question Type",
+            "property": "QuestionType"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Text",
+            "property": "Text"
+          },
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "compositeKeys": [
+        {
+          "keys": [
+            {
+              "key": "NormalizedName"
+            }
+          ]
+        }
+      ],
+      "names": {
+        "entity": "QuestionType",
+        "human": "Question Type",
+        "plural": "Question Types",
+        "table": "QuestionTypes",
+        "url": "question-type"
+      },
+      "properties": [
+        {
+          "names": {
+            "human": "Name",
+            "property": "Name"
+          },
+          "normalized": true,
+          "required": true,
+          "type": "string"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Question",
+              "human": "Question"
+            }
+          },
+          "names": {
+            "human": "Questions",
+            "property": "Questions"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "compositeKeys": [
+        {
+          "keys": [
+            {
+              "key": "NormalizedName"
+            }
+          ]
+        }
+      ],
+      "names": {
+        "entity": "Quiz",
+        "human": "Quiz",
+        "plural": "Quizzes",
+        "table": "Quizzes",
+        "url": "quiz"
+      },
+      "properties": [
+        {
+          "names": {
+            "human": "Name",
+            "property": "Name"
+          },
+          "normalized": true,
+          "required": true,
+          "type": "string"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Text"
+              }
+            ],
+            "names": {
+              "entity": "Question",
+              "human": "Question"
+            }
+          },
+          "names": {
+            "human": "Questions",
+            "property": "Questions"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    }
+  ]
+}
