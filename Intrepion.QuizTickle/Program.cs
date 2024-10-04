@@ -1,10 +1,10 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Data;
-using ApplicationNamePlaceholder.BusinessLogic.Entities;
-using ApplicationNamePlaceholder.BusinessLogic.Services;
-using ApplicationNamePlaceholder.BusinessLogic.Services.Server;
-using ApplicationNamePlaceholder.Client.Pages;
-using ApplicationNamePlaceholder.Components;
-using ApplicationNamePlaceholder.Components.Account;
+﻿using Intrepion.QuizTickle.BusinessLogic.Data;
+using Intrepion.QuizTickle.BusinessLogic.Entities;
+using Intrepion.QuizTickle.BusinessLogic.Services;
+using Intrepion.QuizTickle.BusinessLogic.Services.Server;
+using Intrepion.QuizTickle.Client.Pages;
+using Intrepion.QuizTickle.Components;
+using Intrepion.QuizTickle.Components.Account;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -99,7 +99,7 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(ApplicationNamePlaceholder.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(Intrepion.QuizTickle.Client._Imports).Assembly);
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
