@@ -23,6 +23,11 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
             throw new Exception("Authentication required.");
         }
 
+        if (string.IsNullOrWhiteSpace(answerAdminDto.Text))
+        {
+            throw new Exception("Text required.");
+        }
+
         // AddRequiredPropertyCodePlaceholder
         // if (string.IsNullOrWhiteSpace(answerAdminDto.Title))
         // {
