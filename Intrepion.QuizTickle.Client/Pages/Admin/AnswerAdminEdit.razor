@@ -146,6 +146,11 @@
         {
             correctQuestionList = correctQuestionListResult;
         }
+        var questionListResult = await QuestionAdminService.GetAllAsync(userName);
+        if (questionListResult != null)
+        {
+            questionList = questionListResult;
+        }
         @* OnInitializedCodePlaceholder *@
   }
 
