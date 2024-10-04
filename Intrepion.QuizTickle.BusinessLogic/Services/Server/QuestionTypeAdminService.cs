@@ -1,9 +1,9 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Data;
-using ApplicationNamePlaceholder.BusinessLogic.Entities;
-using ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
+﻿using Intrepion.QuizTickle.BusinessLogic.Data;
+using Intrepion.QuizTickle.BusinessLogic.Entities;
+using Intrepion.QuizTickle.BusinessLogic.Entities.Dtos;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Services.Server;
+namespace Intrepion.QuizTickle.BusinessLogic.Services.Server;
 
 public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext) : IQuestionTypeAdminService
 {
