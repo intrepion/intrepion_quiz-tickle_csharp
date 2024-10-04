@@ -1,8 +1,8 @@
 ﻿using System.Net.Http.Json;
-using ApplicationNamePlaceholder.BusinessLogic.Entities;
-using ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
+using Intrepion.QuizTickle.BusinessLogic.Entities;
+using Intrepion.QuizTickle.BusinessLogic.Entities.Dtos;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Services.Client;
+namespace Intrepion.QuizTickle.BusinessLogic.Services.Client;
 
 public class QuizClientAdminService(HttpClient httpClient) : IQuizAdminService
 {
