@@ -41,6 +41,7 @@
           {
             <tr>
               <td>@question.Id</td>
+              <td>@question.QuestionType?.Name</td>
               @* ListItemCodePlaceholder *@
               <td>
                 <a href="@("/admin/question-edit/" + question.Id)">Edit</a>
