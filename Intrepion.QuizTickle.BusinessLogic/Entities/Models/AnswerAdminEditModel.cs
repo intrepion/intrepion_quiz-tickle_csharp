@@ -9,6 +9,7 @@ public class AnswerAdminEditModel
     public Question? CorrectQuestion { get; set; }
     public int Ordering { get; set; }
     public string Text { get; set; } = string.Empty;
+    public Question? Question { get; set; }
     // JustModelPropertyPlaceholder
     // public string Title { get; set; } = string.Empty;
     // public ToDoList? ToDoList { get; set; }
