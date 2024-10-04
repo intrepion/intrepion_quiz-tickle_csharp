@@ -71,6 +71,30 @@
           </label>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <label>
+            Question:
+            <select @onchange="QuestionOnChange">
+              <option>Select question...</option>
+                @if (questionList != null)
+                {
+                  @foreach (var question in questionList)
+                  {
+                    if (answerAdminEditModel.Question != null && answerAdminEditModel.Question.Id.Equals(question.Id))
+                    {
+                      <option value="@question.Id" selected>@question.Text</option>
+                    }
+                    else
+                    {
+                      <option value="@question.Id">@question.Text</option>
+                    }
+                  }
+                }
+              </select>
+          </label>
+        </div>
+      </div>
       @* EditRowCodePlaceholder *@
 
       <div class="row">
