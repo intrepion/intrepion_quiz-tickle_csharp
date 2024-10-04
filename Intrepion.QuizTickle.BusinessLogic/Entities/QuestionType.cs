@@ -1,4 +1,4 @@
-﻿namespace ApplicationNamePlaceholder.BusinessLogic.Entities;
+﻿namespace Intrepion.QuizTickle.BusinessLogic.Entities;
 
 public class QuestionType
 {

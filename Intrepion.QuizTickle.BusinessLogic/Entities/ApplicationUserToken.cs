@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Entities;
+namespace Intrepion.QuizTickle.BusinessLogic.Entities;
 
 public class ApplicationUserToken : IdentityUserToken<Guid>
 {
