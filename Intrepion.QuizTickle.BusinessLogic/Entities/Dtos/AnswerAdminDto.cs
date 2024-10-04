@@ -38,6 +38,7 @@ public class AnswerAdminDto
             Id = answerAdminDto.Id,
 
             CorrectQuestion = answerAdminDto.CorrectQuestion,
+            Ordering = answerAdminDto.Ordering,
             // DtoToEntityPropertyPlaceholder
             // Title = answerAdminDto.Title,
             // ToDoList = answerAdminDto.ToDoList,
