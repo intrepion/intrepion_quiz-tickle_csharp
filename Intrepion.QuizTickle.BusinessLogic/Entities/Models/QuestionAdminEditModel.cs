@@ -7,6 +7,7 @@ public class QuestionAdminEditModel
     public Guid Id { get; set; }
 
     public QuestionType? QuestionType { get; set; }
+    public string Text { get; set; } = string.Empty;
     // JustModelPropertyPlaceholder
     // public string Title { get; set; } = string.Empty;
     // public ToDoList? ToDoList { get; set; }
