@@ -16,6 +16,7 @@ public partial class AnswerAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Answer Creation");
 
+        await Page.GetByTestId("answerAdminEditOrdering").FillAsync("1");
         // CreatePropertyCodePlaceholder
         // await Page.GetByTestId("answerAdminEditName").FillAsync("a answer");
 
