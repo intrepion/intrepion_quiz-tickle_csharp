@@ -21,6 +21,7 @@ public class QuizAdminDto
         {
             Id = quiz.Id,
 
+            Name = quiz.Name,
             // EntityToDtoPlaceholder
             // Title = quiz.Title,
             // ToDoList = quiz.ToDoList,
