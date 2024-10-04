@@ -4,15 +4,15 @@ using ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
 
 namespace ApplicationNamePlaceholder.BusinessLogic.Services.Client;
 
-public class EntityNamePlaceholderClientAdminService(HttpClient httpClient) : IEntityNamePlaceholderAdminService
+public class QuestionTypeClientAdminService(HttpClient httpClient) : IQuestionTypeAdminService
 {
     private readonly HttpClient _httpClient = httpClient;
 
-    public async Task<EntityNamePlaceholderAdminDto?> AddAsync(EntityNamePlaceholderAdminDto questionTypeAdminDto)
+    public async Task<QuestionTypeAdminDto?> AddAsync(QuestionTypeAdminDto questionTypeAdminDto)
     {
         var result = await _httpClient.PostAsJsonAsync("/api/admin/questionTypeAdmin", questionTypeAdminDto);
 
-        return await result.Content.ReadFromJsonAsync<EntityNamePlaceholderAdminDto>();
+        return await result.Content.ReadFromJsonAsync<QuestionTypeAdminDto>();
     }
 
     public async Task<bool> DeleteAsync(string userName, Guid id)
@@ -22,23 +22,23 @@ public class EntityNamePlaceholderClientAdminService(HttpClient httpClient) : IE
         return await result.Content.ReadFromJsonAsync<bool>();
     }
 
-    public async Task<EntityNamePlaceholderAdminDto?> EditAsync(EntityNamePlaceholderAdminDto questionTypeAdminDto)
+    public async Task<QuestionTypeAdminDto?> EditAsync(QuestionTypeAdminDto questionTypeAdminDto)
     {
         var result = await _httpClient.PutAsJsonAsync($"/api/admin/questionTypeAdmin/{questionTypeAdminDto.Id}", questionTypeAdminDto);
 
-        return await result.Content.ReadFromJsonAsync<EntityNamePlaceholderAdminDto>();
+        return await result.Content.ReadFromJsonAsync<QuestionTypeAdminDto>();
     }
 
-    public async Task<List<EntityNamePlaceholder>?> GetAllAsync(string userName)
+    public async Task<List<QuestionType>?> GetAllAsync(string userName)
     {
-        var result = await _httpClient.GetFromJsonAsync<List<EntityNamePlaceholder>>($"/api/admin/questionTypeAdmin?userName={userName}");
+        var result = await _httpClient.GetFromJsonAsync<List<QuestionType>>($"/api/admin/questionTypeAdmin?userName={userName}");
 
         return result;
     }
 
-    public async Task<EntityNamePlaceholderAdminDto?> GetByIdAsync(string userName, Guid id)
+    public async Task<QuestionTypeAdminDto?> GetByIdAsync(string userName, Guid id)
     {
-        var result = await _httpClient.GetFromJsonAsync<EntityNamePlaceholderAdminDto>($"/api/admin/questionTypeAdmin/{id}?userName={userName}");
+        var result = await _httpClient.GetFromJsonAsync<QuestionTypeAdminDto>($"/api/admin/questionTypeAdmin/{id}?userName={userName}");
 
         return result;
     }
