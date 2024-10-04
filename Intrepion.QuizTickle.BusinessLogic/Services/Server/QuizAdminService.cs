@@ -98,6 +98,11 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
             throw new Exception("HumanNamePlaceholder not found.");
         }
 
+        if (string.IsNullOrWhiteSpace(quizAdminDto.Name))
+        {
+            throw new Exception("Name required.");
+        }
+
         // EditRequiredPropertyCodePlaceholder
         // if (string.IsNullOrWhiteSpace(quizAdminDto.Title))
         // {
