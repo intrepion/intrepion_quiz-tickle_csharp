@@ -31,6 +31,7 @@ public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext)
 
         var questionType = QuestionTypeAdminDto.ToQuestionType(user, questionTypeAdminDto);
 
+        questionType.NormalizedName = questionTypeAdminDto.Name.ToUpperInvariant();
         // AddDatabasePropertyCodePlaceholder
 
         var result = await _applicationDbContext.QuestionTypes.AddAsync(questionType);
