@@ -18,4 +18,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Intrepion.QuizTickle.Shared\Intrepion.QuizTickle.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
