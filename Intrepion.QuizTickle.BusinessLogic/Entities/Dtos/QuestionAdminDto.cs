@@ -23,6 +23,7 @@ public class QuestionAdminDto
             Id = question.Id,
 
             QuestionType = question.QuestionType,
+            Text = question.Text,
             // EntityToDtoPlaceholder
             // Title = question.Title,
             // ToDoList = question.ToDoList,
