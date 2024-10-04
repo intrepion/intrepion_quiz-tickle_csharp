@@ -24,6 +24,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new ApplicationUserTokenEntityTypeConfiguration().Configure(builder.Entity<ApplicationUserToken>());
 
         new AnswerEntityTypeConfiguration().Configure(builder.Entity<Answer>());
+        new QuestionEntityTypeConfiguration().Configure(builder.Entity<Question>());
         // EntityTypeCfgCodePlaceholder
     }
 }
