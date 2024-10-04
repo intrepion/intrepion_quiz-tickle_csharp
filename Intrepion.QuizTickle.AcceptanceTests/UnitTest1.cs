@@ -1,4 +1,4 @@
-namespace Intrepion.QuizTickle.AcceptanceTests;
+﻿namespace Intrepion.QuizTickle.AcceptanceTests;
 
 public class Tests
 {
