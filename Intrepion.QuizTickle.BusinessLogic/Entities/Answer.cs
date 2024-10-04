@@ -8,5 +8,6 @@ public class Answer
     public Question? CorrectQuestion { get; set; }
     public int Ordering { get; set; }
     public string Text { get; set; } = string.Empty;
+    public Question? Question { get; set; }
     // ActualPropertyPlaceholder
 }
