@@ -1,7 +1,7 @@
-﻿using Intrepion.QuizTickle.Data;
+﻿using ApplicationNamePlaceholder.BusinessLogic.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Intrepion.QuizTickle.Components.Account;
+namespace ApplicationNamePlaceholder.Components.Account;
 
 internal sealed class IdentityUserAccessor(UserManager<ApplicationUser> userManager, IdentityRedirectManager redirectManager)
 {
