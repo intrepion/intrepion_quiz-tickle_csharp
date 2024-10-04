@@ -6,6 +6,7 @@ public class AnswerAdminDto
     public Guid Id { get; set; }
 
     public Question? CorrectQuestion { get; set; }
+    public int Ordering { get; set; }
     // DtoPropertyPlaceholder
     // public string Title { get; set; } = string.Empty;
     // public ToDoList? ToDoList { get; set; }
