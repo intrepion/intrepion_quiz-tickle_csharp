@@ -11,7 +11,7 @@ public partial class QuestionAdminPages : PageTest
     public async Task MainNavigation()
     {
         await Expect(Page).ToHaveTitleAsync("Home");
-        await Page.GetByRole(AriaRole.Link, new() { Name = "PluralNamePlaceholder" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Link, new() { Name = "Questions" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Question List");
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Question Creation");
