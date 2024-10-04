@@ -17,6 +17,7 @@ public partial class AnswerAdminPages : PageTest
         await Expect(Page).ToHaveTitleAsync("Answer Creation");
 
         await Page.GetByTestId("answerAdminEditOrdering").FillAsync("1");
+        await Page.GetByTestId("answerAdminEditText").FillAsync("a answer");
         // CreatePropertyCodePlaceholder
         // await Page.GetByTestId("answerAdminEditName").FillAsync("a answer");
 
