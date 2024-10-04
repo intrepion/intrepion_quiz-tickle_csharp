@@ -248,5 +248,16 @@
         answerAdminEditModel.CorrectQuestion = correctQuestionList?.Where(x => x.Id.ToString().Equals(id)).FirstOrDefault();
     }
 
+    void QuestionOnChange(ChangeEventArgs args)
+    {
+        if (args.Value == null)
+        {
+            return;
+        }
+
+        var id = (string)args.Value;
+        answerAdminEditModel.Question = questionList?.Where(x => x.Id.ToString().Equals(id)).FirstOrDefault();
+    }
+
     @* OnChangeCodePlaceholder *@
 }
