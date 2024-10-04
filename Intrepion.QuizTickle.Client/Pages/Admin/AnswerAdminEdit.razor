@@ -30,6 +30,30 @@
   <article>
     <EditForm class="container" Model="answerAdminEditModel" OnSubmit="HandleSubmit">
 
+      <div class="row">
+        <div class="col">
+          <label>
+            Correct Question:
+            <select @onchange="CorrectQuestionOnChange">
+              <option>Select correct question...</option>
+                @if (correctQuestionList != null)
+                {
+                  @foreach (var correctQuestion in correctQuestionList)
+                  {
+                    if (answerAdminEditModel.CorrectQuestion != null && answerAdminEditModel.CorrectQuestion.Id.Equals(correctQuestion.Id))
+                    {
+                      <option value="@correctQuestion.Id" selected>@correctQuestion.Text</option>
+                    }
+                    else
+                    {
+                      <option value="@correctQuestion.Id">@correctQuestion.Text</option>
+                    }
+                  }
+                }
+              </select>
+          </label>
+        </div>
+      </div>
       @* EditRowCodePlaceholder *@
 
       <div class="row">
