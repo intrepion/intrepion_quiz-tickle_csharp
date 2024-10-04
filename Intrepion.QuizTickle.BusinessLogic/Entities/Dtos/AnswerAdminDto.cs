@@ -1,6 +1,6 @@
 ﻿namespace ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
 
-public class EntityNamePlaceholderAdminDto
+public class AnswerAdminDto
 {
     public string ApplicationUserName { get; set; } = string.Empty;
     public Guid Id { get; set; }
@@ -9,14 +9,14 @@ public class EntityNamePlaceholderAdminDto
     // public string Title { get; set; } = string.Empty;
     // public ToDoList? ToDoList { get; set; }
 
-    public static EntityNamePlaceholderAdminDto FromEntityNamePlaceholder(EntityNamePlaceholder? answer)
+    public static AnswerAdminDto FromAnswer(Answer? answer)
     {
         if (answer == null)
         {
-            return new EntityNamePlaceholderAdminDto();
+            return new AnswerAdminDto();
         }
 
-        return new EntityNamePlaceholderAdminDto
+        return new AnswerAdminDto
         {
             Id = answer.Id,
 
@@ -26,9 +26,9 @@ public class EntityNamePlaceholderAdminDto
         };
     }
 
-    public static EntityNamePlaceholder ToEntityNamePlaceholder(ApplicationUser applicationUser, EntityNamePlaceholderAdminDto answerAdminDto)
+    public static Answer ToAnswer(ApplicationUser applicationUser, AnswerAdminDto answerAdminDto)
     {
-        return new EntityNamePlaceholder
+        return new Answer
         {
             ApplicationUserUpdatedBy = applicationUser,
             Id = answerAdminDto.Id,
