@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationNamePlaceholder.BusinessLogic.Services.Server;
 
-public class EntityNamePlaceholderAdminService(ApplicationDbContext applicationDbContext) : IEntityNamePlaceholderAdminService
+public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext) : IQuestionTypeAdminService
 {
     private readonly ApplicationDbContext _applicationDbContext = applicationDbContext;
 
-    public async Task<EntityNamePlaceholderAdminDto?> AddAsync(EntityNamePlaceholderAdminDto questionTypeAdminDto)
+    public async Task<QuestionTypeAdminDto?> AddAsync(QuestionTypeAdminDto questionTypeAdminDto)
     {
         if (string.IsNullOrWhiteSpace(questionTypeAdminDto.ApplicationUserName))
         {
@@ -29,15 +29,15 @@ public class EntityNamePlaceholderAdminService(ApplicationDbContext applicationD
         //     throw new Exception("Title required.");
         // }
 
-        var questionType = EntityNamePlaceholderAdminDto.ToEntityNamePlaceholder(user, questionTypeAdminDto);
+        var questionType = QuestionTypeAdminDto.ToQuestionType(user, questionTypeAdminDto);
 
         // AddDatabasePropertyCodePlaceholder
 
         var result = await _applicationDbContext.TableNamePlaceholder.AddAsync(questionType);
-        var databaseEntityNamePlaceholderAdminDto = EntityNamePlaceholderAdminDto.FromEntityNamePlaceholder(result.Entity);
+        var databaseQuestionTypeAdminDto = QuestionTypeAdminDto.FromQuestionType(result.Entity);
         await _applicationDbContext.SaveChangesAsync();
 
-        return databaseEntityNamePlaceholderAdminDto;
+        return databaseQuestionTypeAdminDto;
     }
 
     public async Task<bool> DeleteAsync(string userName, Guid id)
@@ -54,24 +54,24 @@ public class EntityNamePlaceholderAdminService(ApplicationDbContext applicationD
             throw new Exception("Authentication required.");
         }
 
-        var databaseEntityNamePlaceholder = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var databaseQuestionType = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
 
-        if (databaseEntityNamePlaceholder == null)
+        if (databaseQuestionType == null)
         {
             return false;
         }
 
-        databaseEntityNamePlaceholder.ApplicationUserUpdatedBy = user;
+        databaseQuestionType.ApplicationUserUpdatedBy = user;
         await _applicationDbContext.SaveChangesAsync();
 
-        _applicationDbContext.Remove(databaseEntityNamePlaceholder);
+        _applicationDbContext.Remove(databaseQuestionType);
 
         await _applicationDbContext.SaveChangesAsync();
 
         return true;
     }
 
-    public async Task<EntityNamePlaceholderAdminDto?> EditAsync(EntityNamePlaceholderAdminDto questionTypeAdminDto)
+    public async Task<QuestionTypeAdminDto?> EditAsync(QuestionTypeAdminDto questionTypeAdminDto)
     {
         if (string.IsNullOrWhiteSpace(questionTypeAdminDto.ApplicationUserName))
         {
@@ -85,9 +85,9 @@ public class EntityNamePlaceholderAdminService(ApplicationDbContext applicationD
             throw new Exception("Authentication required.");
         }
 
-        var databaseEntityNamePlaceholder = await _applicationDbContext.TableNamePlaceholder.FindAsync(questionTypeAdminDto.Id);
+        var databaseQuestionType = await _applicationDbContext.TableNamePlaceholder.FindAsync(questionTypeAdminDto.Id);
 
-        if (databaseEntityNamePlaceholder == null)
+        if (databaseQuestionType == null)
         {
             throw new Exception("HumanNamePlaceholder not found.");
         }
@@ -98,19 +98,19 @@ public class EntityNamePlaceholderAdminService(ApplicationDbContext applicationD
         //     throw new Exception("Title required.");
         // }
 
-        databaseEntityNamePlaceholder.ApplicationUserUpdatedBy = user;
+        databaseQuestionType.ApplicationUserUpdatedBy = user;
 
         // EditDatabasePropertyCodePlaceholder
-        // databaseEntityNamePlaceholder.Title = questionTypeAdminDto.Title;
-        // databaseEntityNamePlaceholder.NormalizedTitle = questionTypeAdminDto.Title.ToUpperInvariant();
-        // databaseEntityNamePlaceholder.ToDoList = questionTypeAdminDto.ToDoList;
+        // databaseQuestionType.Title = questionTypeAdminDto.Title;
+        // databaseQuestionType.NormalizedTitle = questionTypeAdminDto.Title.ToUpperInvariant();
+        // databaseQuestionType.ToDoList = questionTypeAdminDto.ToDoList;
 
         await _applicationDbContext.SaveChangesAsync();
 
         return questionTypeAdminDto;
     }
 
-    public async Task<List<EntityNamePlaceholder>?> GetAllAsync(string userName)
+    public async Task<List<QuestionType>?> GetAllAsync(string userName)
     {
         if (string.IsNullOrWhiteSpace(userName))
         {
@@ -127,7 +127,7 @@ public class EntityNamePlaceholderAdminService(ApplicationDbContext applicationD
         return await _applicationDbContext.TableNamePlaceholder.ToListAsync();
     }
 
-    public async Task<EntityNamePlaceholderAdminDto?> GetByIdAsync(string userName, Guid id)
+    public async Task<QuestionTypeAdminDto?> GetByIdAsync(string userName, Guid id)
     {
         if (string.IsNullOrWhiteSpace(userName))
         {
@@ -148,6 +148,6 @@ public class EntityNamePlaceholderAdminService(ApplicationDbContext applicationD
             return null;
         }
 
-        return EntityNamePlaceholderAdminDto.FromEntityNamePlaceholder(result);
+        return QuestionTypeAdminDto.FromQuestionType(result);
     }
 }
