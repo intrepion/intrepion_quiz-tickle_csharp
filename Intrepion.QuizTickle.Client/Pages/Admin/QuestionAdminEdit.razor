@@ -99,7 +99,12 @@
 
     await base.OnInitializedAsync();
 
-    @* OnInitializedCodePlaceholder *@
+    var questionTypeListResult = await QuestionTypeAdminService.GetAllAsync(userName);
+        if (questionTypeListResult != null)
+        {
+            questionTypeList = questionTypeListResult;
+        }
+        @* OnInitializedCodePlaceholder *@
   }
 
   protected override async Task OnParametersSetAsync()
