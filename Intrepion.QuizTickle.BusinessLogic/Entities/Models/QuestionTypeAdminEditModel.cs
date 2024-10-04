@@ -40,6 +40,7 @@ public class QuestionTypeAdminEditModel
         {
             Id = questionTypeAdminEditModel.Id,
 
+            Name = questionTypeAdminEditModel.Name,
             // ModelToDtoPlaceholder
             // Title = questionTypeAdminEditModel.Title,
             // ToDoList = questionTypeAdminEditModel.ToDoList,
