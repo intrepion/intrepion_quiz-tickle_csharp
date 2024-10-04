@@ -12,23 +12,23 @@ public partial class QuestionTypeAdminPages : PageTest
     {
         await Expect(Page).ToHaveTitleAsync("Home");
         await Page.GetByRole(AriaRole.Link, new() { Name = "PluralNamePlaceholder" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder List");
+        await Expect(Page).ToHaveTitleAsync("Question Type List");
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder Creation");
+        await Expect(Page).ToHaveTitleAsync("Question Type Creation");
 
         // CreatePropertyCodePlaceholder
         // await Page.GetByTestId("questionTypeAdminEditName").FillAsync("a questionType");
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Create" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder Modification");
+        await Expect(Page).ToHaveTitleAsync("Question Type Modification");
 
         // ModifyPropertyCodePlaceholder
         // await Page.GetByTestId("questionTypeAdminEditName").FillAsync("some questionType");
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Modify" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder Modification");
+        await Expect(Page).ToHaveTitleAsync("Question Type Modification");
         await Page.GetByRole(AriaRole.Button, new() { Name = "Remove" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder List");
+        await Expect(Page).ToHaveTitleAsync("Question Type List");
     }
 
     [SetUp]
