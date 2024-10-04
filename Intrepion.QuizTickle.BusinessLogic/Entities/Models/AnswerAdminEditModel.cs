@@ -40,6 +40,7 @@ public class AnswerAdminEditModel
         {
             Id = answerAdminEditModel.Id,
 
+            CorrectQuestion = answerAdminEditModel.CorrectQuestion,
             // ModelToDtoPlaceholder
             // Title = answerAdminEditModel.Title,
             // ToDoList = answerAdminEditModel.ToDoList,
