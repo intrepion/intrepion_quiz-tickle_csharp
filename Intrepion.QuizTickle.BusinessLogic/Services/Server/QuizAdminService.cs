@@ -102,6 +102,7 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
         databaseQuiz.ApplicationUserUpdatedBy = user;
 
         databaseQuiz.Name = quizAdminDto.Name;
+        databaseQuiz.NormalizedName = quizAdminDto.Name.ToUpperInvariant();
         // EditDatabasePropertyCodePlaceholder
         // databaseQuiz.Title = quizAdminDto.Title;
         // databaseQuiz.NormalizedTitle = quizAdminDto.Title.ToUpperInvariant();
