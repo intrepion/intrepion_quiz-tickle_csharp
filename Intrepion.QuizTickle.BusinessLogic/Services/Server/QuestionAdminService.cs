@@ -33,7 +33,7 @@ public class QuestionAdminService(ApplicationDbContext applicationDbContext) : I
 
         // AddDatabasePropertyCodePlaceholder
 
-        var result = await _applicationDbContext.TableNamePlaceholder.AddAsync(question);
+        var result = await _applicationDbContext.Questions.AddAsync(question);
         var databaseQuestionAdminDto = QuestionAdminDto.FromQuestion(result.Entity);
         await _applicationDbContext.SaveChangesAsync();
 
@@ -54,7 +54,7 @@ public class QuestionAdminService(ApplicationDbContext applicationDbContext) : I
             throw new Exception("Authentication required.");
         }
 
-        var databaseQuestion = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var databaseQuestion = await _applicationDbContext.Questions.FindAsync(id);
 
         if (databaseQuestion == null)
         {
@@ -85,7 +85,7 @@ public class QuestionAdminService(ApplicationDbContext applicationDbContext) : I
             throw new Exception("Authentication required.");
         }
 
-        var databaseQuestion = await _applicationDbContext.TableNamePlaceholder.FindAsync(questionAdminDto.Id);
+        var databaseQuestion = await _applicationDbContext.Questions.FindAsync(questionAdminDto.Id);
 
         if (databaseQuestion == null)
         {
@@ -124,7 +124,7 @@ public class QuestionAdminService(ApplicationDbContext applicationDbContext) : I
             throw new Exception("Authentication required.");
         }
 
-        return await _applicationDbContext.TableNamePlaceholder.ToListAsync();
+        return await _applicationDbContext.Questions.ToListAsync();
     }
 
     public async Task<QuestionAdminDto?> GetByIdAsync(string userName, Guid id)
@@ -141,7 +141,7 @@ public class QuestionAdminService(ApplicationDbContext applicationDbContext) : I
             throw new Exception("Authentication required.");
         }
 
-        var result = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var result = await _applicationDbContext.Questions.FindAsync(id);
 
         if (result == null)
         {
