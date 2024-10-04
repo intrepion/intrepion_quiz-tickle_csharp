@@ -41,7 +41,8 @@
             <tr>
               <td>@answer.Id</td>
               <td>@answer.CorrectQuestion?.Text</td>
-              @* ListItemCodePlaceholder *@
+              <td>@answer.Ordering</td>
+          @* ListItemCodePlaceholder *@
               <td>
                 <a href="@("/admin/answer-edit/" + answer.Id)">Edit</a>
               </td>
