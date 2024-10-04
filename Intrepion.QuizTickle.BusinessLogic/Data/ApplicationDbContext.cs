@@ -10,6 +10,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Answer> Answers { get; set; }
     public DbSet<Question> Questions { get; set; }
     public DbSet<QuestionType> QuestionTypes { get; set; }
+    public DbSet<Quiz> Quizzes { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
