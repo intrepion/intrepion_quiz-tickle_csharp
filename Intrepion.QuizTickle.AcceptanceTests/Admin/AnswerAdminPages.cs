@@ -23,6 +23,7 @@ public partial class AnswerAdminPages : PageTest
         await Page.GetByRole(AriaRole.Button, new() { Name = "Create" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Answer Modification");
 
+        await Page.GetByTestId("answerAdminEditOrdering").FillAsync("2");
         // ModifyPropertyCodePlaceholder
         // await Page.GetByTestId("answerAdminEditName").FillAsync("some answer");
 
