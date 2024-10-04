@@ -33,7 +33,7 @@ public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext)
 
         // AddDatabasePropertyCodePlaceholder
 
-        var result = await _applicationDbContext.TableNamePlaceholder.AddAsync(questionType);
+        var result = await _applicationDbContext.QuestionTypes.AddAsync(questionType);
         var databaseQuestionTypeAdminDto = QuestionTypeAdminDto.FromQuestionType(result.Entity);
         await _applicationDbContext.SaveChangesAsync();
 
@@ -54,7 +54,7 @@ public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext)
             throw new Exception("Authentication required.");
         }
 
-        var databaseQuestionType = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var databaseQuestionType = await _applicationDbContext.QuestionTypes.FindAsync(id);
 
         if (databaseQuestionType == null)
         {
@@ -85,7 +85,7 @@ public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext)
             throw new Exception("Authentication required.");
         }
 
-        var databaseQuestionType = await _applicationDbContext.TableNamePlaceholder.FindAsync(questionTypeAdminDto.Id);
+        var databaseQuestionType = await _applicationDbContext.QuestionTypes.FindAsync(questionTypeAdminDto.Id);
 
         if (databaseQuestionType == null)
         {
@@ -124,7 +124,7 @@ public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext)
             throw new Exception("Authentication required.");
         }
 
-        return await _applicationDbContext.TableNamePlaceholder.ToListAsync();
+        return await _applicationDbContext.QuestionTypes.ToListAsync();
     }
 
     public async Task<QuestionTypeAdminDto?> GetByIdAsync(string userName, Guid id)
@@ -141,7 +141,7 @@ public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext)
             throw new Exception("Authentication required.");
         }
 
-        var result = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var result = await _applicationDbContext.QuestionTypes.FindAsync(id);
 
         if (result == null)
         {
