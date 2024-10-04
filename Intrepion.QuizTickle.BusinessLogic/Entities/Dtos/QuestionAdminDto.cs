@@ -38,6 +38,7 @@ public class QuestionAdminDto
             Id = questionAdminDto.Id,
 
             QuestionType = questionAdminDto.QuestionType,
+            Text = questionAdminDto.Text,
             // DtoToEntityPropertyPlaceholder
             // Title = questionAdminDto.Title,
             // ToDoList = questionAdminDto.ToDoList,
