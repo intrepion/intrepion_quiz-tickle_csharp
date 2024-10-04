@@ -6,5 +6,6 @@ public class Answer
     public Guid Id { get; set; }
 
     public Question? CorrectQuestion { get; set; }
+    public int Ordering { get; set; }
     // ActualPropertyPlaceholder
 }
