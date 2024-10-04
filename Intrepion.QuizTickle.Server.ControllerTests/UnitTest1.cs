@@ -1,4 +1,4 @@
-namespace Intrepion.QuizTickle.Server.ControllerTests;
+﻿namespace Intrepion.QuizTickle.Server.ControllerTests;
 
 public class Tests
 {
