@@ -1,4 +1,4 @@
-@page "/admin/UrlNamePlaceholder-list"
+@page "/admin/quiz-list"
 @rendermode InteractiveServer
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
 @inject IQuizAdminService QuizAdminService
@@ -40,14 +40,14 @@
               <td>@quiz.Id</td>
               @* ListItemCodePlaceholder *@
               <td>
-                <a href="@("/admin/UrlNamePlaceholder-edit/" + quiz.Id)">Edit</a>
+                <a href="@("/admin/quiz-edit/" + quiz.Id)">Edit</a>
               </td>
             </tr>
           }
         }
       </tbody>
     </table>
-    <a href="/admin/UrlNamePlaceholder-edit">Create</a>
+    <a href="/admin/quiz-edit">Create</a>
   </article>
 </section>
 
