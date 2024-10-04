@@ -21,6 +21,7 @@ public class AnswerAdminDto
         {
             Id = answer.Id,
 
+            CorrectQuestion = answer.CorrectQuestion,
             // EntityToDtoPlaceholder
             // Title = answer.Title,
             // ToDoList = answer.ToDoList,
