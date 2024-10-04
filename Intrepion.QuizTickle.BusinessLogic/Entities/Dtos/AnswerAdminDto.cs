@@ -7,6 +7,7 @@ public class AnswerAdminDto
 
     public Question? CorrectQuestion { get; set; }
     public int Ordering { get; set; }
+    public string Text { get; set; } = string.Empty;
     // DtoPropertyPlaceholder
     // public string Title { get; set; } = string.Empty;
     // public ToDoList? ToDoList { get; set; }
