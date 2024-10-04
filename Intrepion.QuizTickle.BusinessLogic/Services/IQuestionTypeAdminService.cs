@@ -1,7 +1,7 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Entities;
-using ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
+﻿using Intrepion.QuizTickle.BusinessLogic.Entities;
+using Intrepion.QuizTickle.BusinessLogic.Entities.Dtos;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Services;
+namespace Intrepion.QuizTickle.BusinessLogic.Services;
 
 public interface IQuestionTypeAdminService
 {
