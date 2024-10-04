@@ -44,6 +44,7 @@ public class AnswerAdminDto
             CorrectQuestion = answerAdminDto.CorrectQuestion,
             Ordering = answerAdminDto.Ordering,
             Text = answerAdminDto.Text,
+            Question = answerAdminDto.Question,
             // DtoToEntityPropertyPlaceholder
             // Title = answerAdminDto.Title,
             // ToDoList = answerAdminDto.ToDoList,
