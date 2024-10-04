@@ -1,6 +1,6 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
+﻿using Intrepion.QuizTickle.BusinessLogic.Entities.Dtos;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Entities.Models;
+namespace Intrepion.QuizTickle.BusinessLogic.Entities.Models;
 
 public class QuestionAdminEditModel
 {
