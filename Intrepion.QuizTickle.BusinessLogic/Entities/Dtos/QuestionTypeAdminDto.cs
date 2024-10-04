@@ -21,6 +21,7 @@ public class QuestionTypeAdminDto
         {
             Id = questionType.Id,
 
+            Name = questionType.Name,
             // EntityToDtoPlaceholder
             // Title = questionType.Title,
             // ToDoList = questionType.ToDoList,
