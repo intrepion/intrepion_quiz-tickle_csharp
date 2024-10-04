@@ -6,12 +6,12 @@ namespace ApplicationNamePlaceholder.Controllers;
 
 [Route("api/admin/[controller]")]
 [ApiController]
-public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService questionAdminService) : ControllerBase
+public class QuestionController(IQuestionAdminService questionAdminService) : ControllerBase
 {
-    private readonly IEntityNamePlaceholderAdminService _questionAdminService = questionAdminService;
+    private readonly IQuestionAdminService _questionAdminService = questionAdminService;
 
     [HttpPost]
-    public async Task<ActionResult<EntityNamePlaceholderAdminDto?>> Add(EntityNamePlaceholderAdminDto questionAdminDto)
+    public async Task<ActionResult<QuestionAdminDto?>> Add(QuestionAdminDto questionAdminDto)
     {
         var userIdentityName = User.Identity?.Name;
 
@@ -25,9 +25,9 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
             return Ok(null);
         }
 
-        var databaseEntityNamePlaceholderAdminDto = await _questionAdminService.AddAsync(questionAdminDto);
+        var databaseQuestionAdminDto = await _questionAdminService.AddAsync(questionAdminDto);
 
-        return Ok(databaseEntityNamePlaceholderAdminDto);
+        return Ok(databaseQuestionAdminDto);
     }
 
     [HttpDelete("{id}")]
@@ -51,7 +51,7 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
     }
 
     [HttpPut]
-    public async Task<ActionResult<EntityNamePlaceholderAdminDto?>> Edit(EntityNamePlaceholderAdminDto questionAdminDto)
+    public async Task<ActionResult<QuestionAdminDto?>> Edit(QuestionAdminDto questionAdminDto)
     {
         var userIdentityName = User.Identity?.Name;
 
@@ -65,13 +65,13 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
             return Ok(null);
         }
 
-        var databaseEntityNamePlaceholder = await _questionAdminService.EditAsync(questionAdminDto);
+        var databaseQuestion = await _questionAdminService.EditAsync(questionAdminDto);
 
-        return Ok(databaseEntityNamePlaceholder);
+        return Ok(databaseQuestion);
     }
 
     [HttpGet]
-    public async Task<ActionResult<EntityNamePlaceholderAdminDto>?> GetAll(string userName)
+    public async Task<ActionResult<QuestionAdminDto>?> GetAll(string userName)
     {
         var userIdentityName = User.Identity?.Name;
 
@@ -91,7 +91,7 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<EntityNamePlaceholderAdminDto?>> GetById(string userName, Guid id)
+    public async Task<ActionResult<QuestionAdminDto?>> GetById(string userName, Guid id)
     {
         var userIdentityName = User.Identity?.Name;
 
