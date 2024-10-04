@@ -26,6 +26,7 @@ public class AnswerAdminEditModel
 
             CorrectQuestion = answerAdminDto.CorrectQuestion,
             Ordering = answerAdminDto.Ordering,
+            Text = answerAdminDto.Text,
             // DtoToModelPlaceholder
             // Title = answerAdminDto.Title,
             // ToDoList = answerAdminDto.ToDoList,
