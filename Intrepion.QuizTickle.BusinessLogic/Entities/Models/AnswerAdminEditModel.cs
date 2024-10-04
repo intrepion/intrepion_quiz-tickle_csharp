@@ -2,7 +2,7 @@
 
 namespace ApplicationNamePlaceholder.BusinessLogic.Entities.Models;
 
-public class EntityNamePlaceholderAdminEditModel
+public class AnswerAdminEditModel
 {
     public Guid Id { get; set; }
 
@@ -10,14 +10,14 @@ public class EntityNamePlaceholderAdminEditModel
     // public string Title { get; set; } = string.Empty;
     // public ToDoList? ToDoList { get; set; }
 
-    public static EntityNamePlaceholderAdminEditModel FromEntityNamePlaceholderAdminDto(EntityNamePlaceholderAdminDto answerAdminDto)
+    public static AnswerAdminEditModel FromAnswerAdminDto(AnswerAdminDto answerAdminDto)
     {
         if (answerAdminDto == null)
         {
-            return new EntityNamePlaceholderAdminEditModel();
+            return new AnswerAdminEditModel();
         }
 
-        return new EntityNamePlaceholderAdminEditModel
+        return new AnswerAdminEditModel
         {
             Id = answerAdminDto.Id,
 
@@ -27,14 +27,14 @@ public class EntityNamePlaceholderAdminEditModel
         };
     }
 
-    public static EntityNamePlaceholderAdminDto ToEntityNamePlaceholderAdminDto(EntityNamePlaceholderAdminEditModel answerAdminEditModel)
+    public static AnswerAdminDto ToAnswerAdminDto(AnswerAdminEditModel answerAdminEditModel)
     {
         if (answerAdminEditModel == null)
         {
-            return new EntityNamePlaceholderAdminDto();
+            return new AnswerAdminDto();
         }
 
-        return new EntityNamePlaceholderAdminDto
+        return new AnswerAdminDto
         {
             Id = answerAdminEditModel.Id,
 
