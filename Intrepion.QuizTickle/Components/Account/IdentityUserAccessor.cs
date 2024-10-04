@@ -1,5 +1,5 @@
+﻿using Intrepion.QuizTickle.Data;
 using Microsoft.AspNetCore.Identity;
-using Intrepion.QuizTickle.Data;
 
 namespace Intrepion.QuizTickle.Components.Account;
 

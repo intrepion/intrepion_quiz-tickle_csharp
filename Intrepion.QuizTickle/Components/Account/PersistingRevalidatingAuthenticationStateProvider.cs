@@ -1,13 +1,13 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Security.Claims;
+using Intrepion.QuizTickle.Client;
+using Intrepion.QuizTickle.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Intrepion.QuizTickle.Client;
-using Intrepion.QuizTickle.Data;
 
 namespace Intrepion.QuizTickle.Components.Account;
 

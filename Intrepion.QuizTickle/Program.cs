@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Intrepion.QuizTickle.Client.Pages;
+﻿using Intrepion.QuizTickle.Client.Pages;
 using Intrepion.QuizTickle.Components;
 using Intrepion.QuizTickle.Components.Account;
 using Intrepion.QuizTickle.Data;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
