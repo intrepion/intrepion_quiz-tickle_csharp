@@ -25,6 +25,7 @@ public partial class AnswerAdminPages : PageTest
         await Expect(Page).ToHaveTitleAsync("Answer Modification");
 
         await Page.GetByTestId("answerAdminEditOrdering").FillAsync("2");
+        await Page.GetByTestId("answerAdminEditText").FillAsync("some answer");
         // ModifyPropertyCodePlaceholder
         // await Page.GetByTestId("answerAdminEditName").FillAsync("some answer");
 
