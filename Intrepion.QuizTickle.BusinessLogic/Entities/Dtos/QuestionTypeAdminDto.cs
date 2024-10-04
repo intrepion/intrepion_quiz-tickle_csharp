@@ -35,6 +35,7 @@ public class QuestionTypeAdminDto
             ApplicationUserUpdatedBy = applicationUser,
             Id = questionTypeAdminDto.Id,
 
+            Name = questionTypeAdminDto.Name,
             // DtoToEntityPropertyPlaceholder
             // Title = questionTypeAdminDto.Title,
             // ToDoList = questionTypeAdminDto.ToDoList,
