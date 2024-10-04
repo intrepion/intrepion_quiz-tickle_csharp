@@ -126,6 +126,7 @@
   AnswerAdminEditModel answerAdminEditModel { get; set; } = new AnswerAdminEditModel();
 
   List<Question> correctQuestionList { get; set; } = [];
+    List<Question> questionList { get; set; } = [];
     @* ListDeclarationCodePlaceholder *@
 
   protected override async Task OnInitializedAsync()
