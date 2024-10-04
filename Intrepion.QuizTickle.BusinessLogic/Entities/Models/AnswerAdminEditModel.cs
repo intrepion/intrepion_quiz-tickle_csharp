@@ -49,6 +49,7 @@ public class AnswerAdminEditModel
             CorrectQuestion = answerAdminEditModel.CorrectQuestion,
             Ordering = answerAdminEditModel.Ordering,
             Text = answerAdminEditModel.Text,
+            Question = answerAdminEditModel.Question,
             // ModelToDtoPlaceholder
             // Title = answerAdminEditModel.Title,
             // ToDoList = answerAdminEditModel.ToDoList,
