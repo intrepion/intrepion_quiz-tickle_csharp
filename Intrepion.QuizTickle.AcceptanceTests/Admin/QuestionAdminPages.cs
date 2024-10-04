@@ -23,6 +23,7 @@ public partial class QuestionAdminPages : PageTest
         await Page.GetByRole(AriaRole.Button, new() { Name = "Create" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Question Modification");
 
+        await Page.GetByTestId("questionAdminEditText").FillAsync("some question");
         // ModifyPropertyCodePlaceholder
         // await Page.GetByTestId("questionAdminEditName").FillAsync("some question");
 
