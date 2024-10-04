@@ -14,4 +14,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Intrepion.QuizTickle.Shared\Intrepion.QuizTickle.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
