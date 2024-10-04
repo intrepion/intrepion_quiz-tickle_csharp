@@ -99,7 +99,12 @@
 
     await base.OnInitializedAsync();
 
-    @* OnInitializedCodePlaceholder *@
+    var correctQuestionListResult = await QuestionAdminService.GetAllAsync(userName);
+        if (correctQuestionListResult != null)
+        {
+            correctQuestionList = correctQuestionListResult;
+        }
+        @* OnInitializedCodePlaceholder *@
   }
 
   protected override async Task OnParametersSetAsync()
