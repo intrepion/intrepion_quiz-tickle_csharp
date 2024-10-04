@@ -28,6 +28,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new AnswerEntityTypeConfiguration().Configure(builder.Entity<Answer>());
         new QuestionEntityTypeConfiguration().Configure(builder.Entity<Question>());
         new QuestionTypeEntityTypeConfiguration().Configure(builder.Entity<QuestionType>());
+        new QuizEntityTypeConfiguration().Configure(builder.Entity<Quiz>());
         // EntityTypeCfgCodePlaceholder
     }
 }
