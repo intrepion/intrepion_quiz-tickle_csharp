@@ -61,6 +61,7 @@ builder.Services.AddScoped<IApplicationRoleAdminService, ApplicationRoleAdminSer
 builder.Services.AddScoped<IApplicationUserAdminService, ApplicationUserAdminService>();
 
 builder.Services.AddScoped<IAnswerAdminService, AnswerAdminService>();
+builder.Services.AddScoped<IQuestionAdminService, QuestionAdminService>();
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
