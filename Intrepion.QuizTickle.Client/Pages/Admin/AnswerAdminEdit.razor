@@ -190,5 +190,16 @@
     NavigationManager.NavigateTo($"/admin/answer-list");
   }
 
-  @* OnChangeCodePlaceholder *@
+  void CorrectQuestionOnChange(ChangeEventArgs args)
+    {
+        if (args.Value == null)
+        {
+            return;
+        }
+
+        var id = (string)args.Value;
+        answerAdminEditModel.CorrectQuestion = correctQuestionList?.Where(x => x.Id.ToString().Equals(id)).FirstOrDefault();
+    }
+
+    @* OnChangeCodePlaceholder *@
 }
