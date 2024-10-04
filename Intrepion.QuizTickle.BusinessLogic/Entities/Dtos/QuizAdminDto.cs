@@ -35,6 +35,7 @@ public class QuizAdminDto
             ApplicationUserUpdatedBy = applicationUser,
             Id = quizAdminDto.Id,
 
+            Name = quizAdminDto.Name,
             // DtoToEntityPropertyPlaceholder
             // Title = quizAdminDto.Title,
             // ToDoList = quizAdminDto.ToDoList,
