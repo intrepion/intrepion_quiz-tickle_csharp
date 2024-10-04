@@ -112,6 +112,7 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
 
         databaseAnswer.CorrectQuestion = answerAdminDto.CorrectQuestion;
         databaseAnswer.Text = answerAdminDto.Text;
+        databaseAnswer.Question = answerAdminDto.Question;
         // EditDatabasePropertyCodePlaceholder
         // databaseAnswer.Title = answerAdminDto.Title;
         // databaseAnswer.NormalizedTitle = answerAdminDto.Title.ToUpperInvariant();
