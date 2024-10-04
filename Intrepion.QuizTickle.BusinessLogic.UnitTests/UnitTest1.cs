@@ -1,4 +1,4 @@
-namespace Intrepion.QuizTickle.BusinessLogic.UnitTests;
+﻿namespace Intrepion.QuizTickle.BusinessLogic.UnitTests;
 
 public class Tests
 {
