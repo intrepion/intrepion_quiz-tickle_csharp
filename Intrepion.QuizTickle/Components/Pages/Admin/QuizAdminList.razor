@@ -20,13 +20,13 @@
         </tr>
       </thead>
       <tbody>
-        @if (TableLowercaseNamePlaceholder == null)
+        @if (quizzes == null)
         {
           <tr>
             @* LoadingCountCodePlaceholder *@
           </tr>
         }
-        else if (TableLowercaseNamePlaceholder.Count == 0)
+        else if (quizzes.Count == 0)
         {
           <tr>
             @* ZeroCountCodePlaceholder *@
@@ -34,7 +34,7 @@
         }
         else
         {
-          @foreach (var quiz in TableLowercaseNamePlaceholder)
+          @foreach (var quiz in quizzes)
           {
             <tr>
               <td>@quiz.Id</td>
@@ -52,7 +52,7 @@
 </section>
 
 @code {
-  List<Quiz>? TableLowercaseNamePlaceholder = null;
+  List<Quiz>? quizzes = null;
 
   protected override async Task OnInitializedAsync()
   {
@@ -64,6 +64,6 @@
       return;
     }
 
-    TableLowercaseNamePlaceholder = await QuizAdminService.GetAllAsync(userName);
+    quizzes = await QuizAdminService.GetAllAsync(userName);
   }
 }
