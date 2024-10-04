@@ -190,5 +190,16 @@
     NavigationManager.NavigateTo($"/admin/question-list");
   }
 
-  @* OnChangeCodePlaceholder *@
+  void QuestionTypeOnChange(ChangeEventArgs args)
+    {
+        if (args.Value == null)
+        {
+            return;
+        }
+
+        var id = (string)args.Value;
+        questionAdminEditModel.QuestionType = questionTypeList?.Where(x => x.Id.ToString().Equals(id)).FirstOrDefault();
+    }
+
+    @* OnChangeCodePlaceholder *@
 }
