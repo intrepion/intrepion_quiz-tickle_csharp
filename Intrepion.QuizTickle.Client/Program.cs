@@ -1,6 +1,6 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Services;
-using ApplicationNamePlaceholder.BusinessLogic.Services.Client;
-using ApplicationNamePlaceholder.Client;
+﻿using Intrepion.QuizTickle.BusinessLogic.Services;
+using Intrepion.QuizTickle.BusinessLogic.Services.Client;
+using Intrepion.QuizTickle.Client;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
