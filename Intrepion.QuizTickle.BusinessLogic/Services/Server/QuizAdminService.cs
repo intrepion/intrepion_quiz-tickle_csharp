@@ -23,6 +23,11 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
             throw new Exception("Authentication required.");
         }
 
+        if (string.IsNullOrWhiteSpace(quizAdminDto.Name))
+        {
+            throw new Exception("Name required.");
+        }
+
         // AddRequiredPropertyCodePlaceholder
         // if (string.IsNullOrWhiteSpace(quizAdminDto.Title))
         // {
