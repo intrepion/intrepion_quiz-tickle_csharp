@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Intrepion.QuizTickle.Shared\Intrepion.QuizTickle.Shared.csproj" />
+    <ProjectReference Include="..\Intrepion.QuizTickle.BusinessLogic\Intrepion.QuizTickle.BusinessLogic.csproj" />
   </ItemGroup>
 
 </Project>
