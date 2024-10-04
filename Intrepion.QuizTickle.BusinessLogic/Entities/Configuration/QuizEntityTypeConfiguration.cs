@@ -7,13 +7,13 @@ public class QuizEntityTypeConfiguration : IEntityTypeConfiguration<Quiz>
 {
     public void Configure(EntityTypeBuilder<Quiz> builder)
     {
-        builder.ToTable("TableNamePlaceholder", x => x.IsTemporal());
+        builder.ToTable("Quizzes", x => x.IsTemporal());
 
         // EntityConfigurationCodePlaceholder
         // builder.Property(x => x.PropertyNamePlaceholder);
 
         builder.HasOne(x => x.ApplicationUserUpdatedBy)
-            .WithMany(x => x.UpdatedTableNamePlaceholder)
+            .WithMany(x => x.UpdatedQuizzes)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
