@@ -22,6 +22,7 @@ public class QuestionTypeAdminEditModel
         {
             Id = questionTypeAdminDto.Id,
 
+            Name = questionTypeAdminDto.Name,
             // DtoToModelPlaceholder
             // Title = questionTypeAdminDto.Title,
             // ToDoList = questionTypeAdminDto.ToDoList,
