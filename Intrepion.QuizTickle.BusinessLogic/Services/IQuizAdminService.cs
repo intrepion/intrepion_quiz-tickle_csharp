@@ -3,11 +3,11 @@ using ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
 
 namespace ApplicationNamePlaceholder.BusinessLogic.Services;
 
-public interface IEntityNamePlaceholderAdminService
+public interface IQuizAdminService
 {
-    Task<EntityNamePlaceholderAdminDto?> AddAsync(EntityNamePlaceholderAdminDto quiz);
+    Task<QuizAdminDto?> AddAsync(QuizAdminDto quiz);
     Task<bool> DeleteAsync(string userName, Guid id);
-    Task<EntityNamePlaceholderAdminDto?> EditAsync(EntityNamePlaceholderAdminDto quiz);
-    Task<List<EntityNamePlaceholder>?> GetAllAsync(string userName);
-    Task<EntityNamePlaceholderAdminDto?> GetByIdAsync(string userName, Guid id);
+    Task<QuizAdminDto?> EditAsync(QuizAdminDto quiz);
+    Task<List<Quiz>?> GetAllAsync(string userName);
+    Task<QuizAdminDto?> GetByIdAsync(string userName, Guid id);
 }
