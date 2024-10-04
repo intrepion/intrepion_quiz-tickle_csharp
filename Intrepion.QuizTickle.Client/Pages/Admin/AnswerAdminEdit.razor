@@ -3,7 +3,7 @@
 @rendermode InteractiveAuto
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
 @inject NavigationManager NavigationManager
-@inject IEntityNamePlaceholderAdminService EntityNamePlaceholderAdminService
+@inject IAnswerAdminService AnswerAdminService
 
 @* InjectionCodePlaceholder *@
 @* @inject IToDoListAdminService ToDoListAdminService *@
@@ -57,7 +57,7 @@
 @code {
   [Parameter]
   public Guid Id { get; set; }
-  EntityNamePlaceholderAdminEditModel answerAdminEditModel { get; set; } = new EntityNamePlaceholderAdminEditModel();
+  AnswerAdminEditModel answerAdminEditModel { get; set; } = new AnswerAdminEditModel();
 
   @* ListDeclarationCodePlaceholder *@
 
@@ -91,15 +91,15 @@
       return;
     }
 
-    var databaseEntityNamePlaceholderAdminDto = await EntityNamePlaceholderAdminService.GetByIdAsync(userName, Id);
+    var databaseAnswerAdminDto = await AnswerAdminService.GetByIdAsync(userName, Id);
 
-    if (databaseEntityNamePlaceholderAdminDto == null)
+    if (databaseAnswerAdminDto == null)
     {
-      answerAdminEditModel = new EntityNamePlaceholderAdminEditModel();
+      answerAdminEditModel = new AnswerAdminEditModel();
     }
     else
     {
-      answerAdminEditModel = EntityNamePlaceholderAdminEditModel.FromEntityNamePlaceholderAdminDto(databaseEntityNamePlaceholderAdminDto);
+      answerAdminEditModel = AnswerAdminEditModel.FromAnswerAdminDto(databaseAnswerAdminDto);
     }
   }
 
@@ -120,23 +120,23 @@
       return;
     } *@
 
-    var answerAdminDto = EntityNamePlaceholderAdminEditModel.ToEntityNamePlaceholderAdminDto(answerAdminEditModel);
+    var answerAdminDto = AnswerAdminEditModel.ToAnswerAdminDto(answerAdminEditModel);
     answerAdminDto.ApplicationUserName = userName;
 
     if (Id.Equals(Guid.Empty))
     {
-      var newEntityNamePlaceholderAdminDto = await EntityNamePlaceholderAdminService.AddAsync(answerAdminDto);
+      var newAnswerAdminDto = await AnswerAdminService.AddAsync(answerAdminDto);
 
-      if (newEntityNamePlaceholderAdminDto == null)
+      if (newAnswerAdminDto == null)
       {
         return;
       }
 
-      NavigationManager.NavigateTo($"/admin/UrlNamePlaceholder-edit/{newEntityNamePlaceholderAdminDto.Id}");
+      NavigationManager.NavigateTo($"/admin/UrlNamePlaceholder-edit/{newAnswerAdminDto.Id}");
     }
     else
     {
-      await EntityNamePlaceholderAdminService.EditAsync(answerAdminDto);
+      await AnswerAdminService.EditAsync(answerAdminDto);
     }
   }
 
@@ -155,7 +155,7 @@
       return;
     }
 
-    await EntityNamePlaceholderAdminService.DeleteAsync(userName, Id);
+    await AnswerAdminService.DeleteAsync(userName, Id);
     NavigationManager.NavigateTo($"/admin/UrlNamePlaceholder-list");
   }
 
