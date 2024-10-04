@@ -102,6 +102,7 @@ public class QuestionTypeAdminService(ApplicationDbContext applicationDbContext)
         databaseQuestionType.ApplicationUserUpdatedBy = user;
 
         databaseQuestionType.Name = questionTypeAdminDto.Name;
+        databaseQuestionType.NormalizedName = questionTypeAdminDto.Name.ToUpperInvariant();
         // EditDatabasePropertyCodePlaceholder
         // databaseQuestionType.Title = questionTypeAdminDto.Title;
         // databaseQuestionType.NormalizedTitle = questionTypeAdminDto.Title.ToUpperInvariant();
