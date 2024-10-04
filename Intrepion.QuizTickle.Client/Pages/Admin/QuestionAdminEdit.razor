@@ -30,6 +30,30 @@
   <article>
     <EditForm class="container" Model="questionAdminEditModel" OnSubmit="HandleSubmit">
 
+      <div class="row">
+        <div class="col">
+          <label>
+            Question Type:
+            <select @onchange="QuestionTypeOnChange">
+              <option>Select question type...</option>
+                @if (questionTypeList != null)
+                {
+                  @foreach (var questionType in questionTypeList)
+                  {
+                    if (questionAdminEditModel.QuestionType != null && questionAdminEditModel.QuestionType.Id.Equals(questionType.Id))
+                    {
+                      <option value="@questionType.Id" selected>@questionType.Name</option>
+                    }
+                    else
+                    {
+                      <option value="@questionType.Id">@questionType.Name</option>
+                    }
+                  }
+                }
+              </select>
+          </label>
+        </div>
+      </div>
       @* EditRowCodePlaceholder *@
 
       <div class="row">
