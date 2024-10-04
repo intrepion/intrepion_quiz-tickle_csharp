@@ -33,7 +33,7 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
 
         // AddDatabasePropertyCodePlaceholder
 
-        var result = await _applicationDbContext.TableNamePlaceholder.AddAsync(answer);
+        var result = await _applicationDbContext.Answers.AddAsync(answer);
         var databaseAnswerAdminDto = AnswerAdminDto.FromAnswer(result.Entity);
         await _applicationDbContext.SaveChangesAsync();
 
@@ -54,7 +54,7 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
             throw new Exception("Authentication required.");
         }
 
-        var databaseAnswer = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var databaseAnswer = await _applicationDbContext.Answers.FindAsync(id);
 
         if (databaseAnswer == null)
         {
@@ -85,7 +85,7 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
             throw new Exception("Authentication required.");
         }
 
-        var databaseAnswer = await _applicationDbContext.TableNamePlaceholder.FindAsync(answerAdminDto.Id);
+        var databaseAnswer = await _applicationDbContext.Answers.FindAsync(answerAdminDto.Id);
 
         if (databaseAnswer == null)
         {
@@ -124,7 +124,7 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
             throw new Exception("Authentication required.");
         }
 
-        return await _applicationDbContext.TableNamePlaceholder.ToListAsync();
+        return await _applicationDbContext.Answers.ToListAsync();
     }
 
     public async Task<AnswerAdminDto?> GetByIdAsync(string userName, Guid id)
@@ -141,7 +141,7 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
             throw new Exception("Authentication required.");
         }
 
-        var result = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var result = await _applicationDbContext.Answers.FindAsync(id);
 
         if (result == null)
         {
