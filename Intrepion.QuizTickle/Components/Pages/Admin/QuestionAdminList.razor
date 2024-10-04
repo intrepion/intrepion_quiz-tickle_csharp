@@ -1,4 +1,4 @@
-@page "/admin/UrlNamePlaceholder-list"
+@page "/admin/question-list"
 @rendermode InteractiveServer
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
 @inject IQuestionAdminService QuestionAdminService
@@ -40,14 +40,14 @@
               <td>@question.Id</td>
               @* ListItemCodePlaceholder *@
               <td>
-                <a href="@("/admin/UrlNamePlaceholder-edit/" + question.Id)">Edit</a>
+                <a href="@("/admin/question-edit/" + question.Id)">Edit</a>
               </td>
             </tr>
           }
         }
       </tbody>
     </table>
-    <a href="/admin/UrlNamePlaceholder-edit">Create</a>
+    <a href="/admin/question-edit">Create</a>
   </article>
 </section>
 
