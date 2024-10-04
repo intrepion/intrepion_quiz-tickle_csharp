@@ -5,7 +5,7 @@ namespace ApplicationNamePlaceholder.AcceptanceTests.Admin;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public partial class EntityNamePlaceholderAdminPages : PageTest
+public partial class QuestionTypeAdminPages : PageTest
 {
     [Test]
     public async Task MainNavigation()
