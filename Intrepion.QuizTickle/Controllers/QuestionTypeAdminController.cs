@@ -6,12 +6,12 @@ namespace ApplicationNamePlaceholder.Controllers;
 
 [Route("api/admin/[controller]")]
 [ApiController]
-public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService EntityLowercaseNamePlaceholderAdminService) : ControllerBase
+public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService questionTypeAdminService) : ControllerBase
 {
-    private readonly IEntityNamePlaceholderAdminService _EntityLowercaseNamePlaceholderAdminService = EntityLowercaseNamePlaceholderAdminService;
+    private readonly IEntityNamePlaceholderAdminService _questionTypeAdminService = questionTypeAdminService;
 
     [HttpPost]
-    public async Task<ActionResult<EntityNamePlaceholderAdminDto?>> Add(EntityNamePlaceholderAdminDto EntityLowercaseNamePlaceholderAdminDto)
+    public async Task<ActionResult<EntityNamePlaceholderAdminDto?>> Add(EntityNamePlaceholderAdminDto questionTypeAdminDto)
     {
         var userIdentityName = User.Identity?.Name;
 
@@ -20,12 +20,12 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
             return Ok(null);
         }
 
-        if (string.Equals(EntityLowercaseNamePlaceholderAdminDto.ApplicationUserName, userIdentityName, StringComparison.InvariantCultureIgnoreCase))
+        if (string.Equals(questionTypeAdminDto.ApplicationUserName, userIdentityName, StringComparison.InvariantCultureIgnoreCase))
         {
             return Ok(null);
         }
 
-        var databaseEntityNamePlaceholderAdminDto = await _EntityLowercaseNamePlaceholderAdminService.AddAsync(EntityLowercaseNamePlaceholderAdminDto);
+        var databaseEntityNamePlaceholderAdminDto = await _questionTypeAdminService.AddAsync(questionTypeAdminDto);
 
         return Ok(databaseEntityNamePlaceholderAdminDto);
     }
@@ -45,13 +45,13 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
             return Ok(null);
         }
 
-        var result = await _EntityLowercaseNamePlaceholderAdminService.DeleteAsync(userIdentityName, id);
+        var result = await _questionTypeAdminService.DeleteAsync(userIdentityName, id);
 
         return Ok(result);
     }
 
     [HttpPut]
-    public async Task<ActionResult<EntityNamePlaceholderAdminDto?>> Edit(EntityNamePlaceholderAdminDto EntityLowercaseNamePlaceholderAdminDto)
+    public async Task<ActionResult<EntityNamePlaceholderAdminDto?>> Edit(EntityNamePlaceholderAdminDto questionTypeAdminDto)
     {
         var userIdentityName = User.Identity?.Name;
 
@@ -60,12 +60,12 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
             return Ok(null);
         }
 
-        if (string.Equals(EntityLowercaseNamePlaceholderAdminDto.ApplicationUserName, userIdentityName, StringComparison.InvariantCultureIgnoreCase))
+        if (string.Equals(questionTypeAdminDto.ApplicationUserName, userIdentityName, StringComparison.InvariantCultureIgnoreCase))
         {
             return Ok(null);
         }
 
-        var databaseEntityNamePlaceholder = await _EntityLowercaseNamePlaceholderAdminService.EditAsync(EntityLowercaseNamePlaceholderAdminDto);
+        var databaseEntityNamePlaceholder = await _questionTypeAdminService.EditAsync(questionTypeAdminDto);
 
         return Ok(databaseEntityNamePlaceholder);
     }
@@ -85,9 +85,9 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
             return Ok(null);
         }
 
-        var EntityLowercaseNamePlaceholderAdminDtos = await _EntityLowercaseNamePlaceholderAdminService.GetAllAsync(userIdentityName);
+        var questionTypeAdminDtos = await _questionTypeAdminService.GetAllAsync(userIdentityName);
 
-        return Ok(EntityLowercaseNamePlaceholderAdminDtos);
+        return Ok(questionTypeAdminDtos);
     }
 
     [HttpGet("{id}")]
@@ -105,8 +105,8 @@ public class EntityNamePlaceholderController(IEntityNamePlaceholderAdminService 
             return Ok(null);
         }
 
-        var EntityLowercaseNamePlaceholderAdminDto = await _EntityLowercaseNamePlaceholderAdminService.GetByIdAsync(userIdentityName, id);
+        var questionTypeAdminDto = await _questionTypeAdminService.GetByIdAsync(userIdentityName, id);
 
-        return Ok(EntityLowercaseNamePlaceholderAdminDto);
+        return Ok(questionTypeAdminDto);
     }
 }
