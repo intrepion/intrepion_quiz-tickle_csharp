@@ -97,6 +97,11 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
             throw new Exception("HumanNamePlaceholder not found.");
         }
 
+        if (string.IsNullOrWhiteSpace(answerAdminDto.Text))
+        {
+            throw new Exception("Text required.");
+        }
+
         // EditRequiredPropertyCodePlaceholder
         // if (string.IsNullOrWhiteSpace(answerAdminDto.Title))
         // {
