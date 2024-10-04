@@ -84,7 +84,8 @@
   public Guid Id { get; set; }
   AnswerAdminEditModel answerAdminEditModel { get; set; } = new AnswerAdminEditModel();
 
-  @* ListDeclarationCodePlaceholder *@
+  List<Question> correctQuestionList { get; set; } = [];
+    @* ListDeclarationCodePlaceholder *@
 
   protected override async Task OnInitializedAsync()
   {
