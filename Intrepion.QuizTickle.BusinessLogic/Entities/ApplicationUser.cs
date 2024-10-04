@@ -15,6 +15,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<ApplicationUserToken> UpdatedApplicationUserTokens { get; set; } = [];
 
     public ICollection<Answer> UpdatedAnswers { get; set; } = [];
-    public ICollection<EntityNamePlaceholder> UpdatedQuestions { get; set; } = [];
+    public ICollection<Question> UpdatedQuestions { get; set; } = [];
     // AppUserUpdatedCodePlaceholder
 }
