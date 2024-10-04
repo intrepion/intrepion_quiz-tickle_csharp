@@ -27,6 +27,7 @@ public class AnswerAdminDto
             CorrectQuestion = answer.CorrectQuestion,
             Ordering = answer.Ordering,
             Text = answer.Text,
+            Question = answer.Question,
             // EntityToDtoPlaceholder
             // Title = answer.Title,
             // ToDoList = answer.ToDoList,
