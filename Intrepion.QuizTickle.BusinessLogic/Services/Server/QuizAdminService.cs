@@ -31,6 +31,7 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
 
         var quiz = QuizAdminDto.ToQuiz(user, quizAdminDto);
 
+        quiz.NormalizedName = quizAdminDto.Name.ToUpperInvariant();
         // AddDatabasePropertyCodePlaceholder
 
         var result = await _applicationDbContext.Quizzes.AddAsync(quiz);
