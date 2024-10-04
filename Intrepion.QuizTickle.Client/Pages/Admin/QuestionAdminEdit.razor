@@ -84,7 +84,8 @@
   public Guid Id { get; set; }
   QuestionAdminEditModel questionAdminEditModel { get; set; } = new QuestionAdminEditModel();
 
-  @* ListDeclarationCodePlaceholder *@
+  List<QuestionType> questionTypeList { get; set; } = [];
+    @* ListDeclarationCodePlaceholder *@
 
   protected override async Task OnInitializedAsync()
   {
