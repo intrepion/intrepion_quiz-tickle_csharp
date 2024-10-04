@@ -23,6 +23,7 @@ public class AnswerAdminDto
             Id = answer.Id,
 
             CorrectQuestion = answer.CorrectQuestion,
+            Ordering = answer.Ordering,
             // EntityToDtoPlaceholder
             // Title = answer.Title,
             // ToDoList = answer.ToDoList,
