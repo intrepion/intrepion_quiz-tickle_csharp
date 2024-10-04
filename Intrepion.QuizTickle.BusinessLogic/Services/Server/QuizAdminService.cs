@@ -33,7 +33,7 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
 
         // AddDatabasePropertyCodePlaceholder
 
-        var result = await _applicationDbContext.TableNamePlaceholder.AddAsync(quiz);
+        var result = await _applicationDbContext.Quizzes.AddAsync(quiz);
         var databaseQuizAdminDto = QuizAdminDto.FromQuiz(result.Entity);
         await _applicationDbContext.SaveChangesAsync();
 
@@ -54,7 +54,7 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
             throw new Exception("Authentication required.");
         }
 
-        var databaseQuiz = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var databaseQuiz = await _applicationDbContext.Quizzes.FindAsync(id);
 
         if (databaseQuiz == null)
         {
@@ -85,7 +85,7 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
             throw new Exception("Authentication required.");
         }
 
-        var databaseQuiz = await _applicationDbContext.TableNamePlaceholder.FindAsync(quizAdminDto.Id);
+        var databaseQuiz = await _applicationDbContext.Quizzes.FindAsync(quizAdminDto.Id);
 
         if (databaseQuiz == null)
         {
@@ -124,7 +124,7 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
             throw new Exception("Authentication required.");
         }
 
-        return await _applicationDbContext.TableNamePlaceholder.ToListAsync();
+        return await _applicationDbContext.Quizzes.ToListAsync();
     }
 
     public async Task<QuizAdminDto?> GetByIdAsync(string userName, Guid id)
@@ -141,7 +141,7 @@ public class QuizAdminService(ApplicationDbContext applicationDbContext) : IQuiz
             throw new Exception("Authentication required.");
         }
 
-        var result = await _applicationDbContext.TableNamePlaceholder.FindAsync(id);
+        var result = await _applicationDbContext.Quizzes.FindAsync(id);
 
         if (result == null)
         {
