@@ -43,6 +43,7 @@ public class QuestionAdminEditModel
             Id = questionAdminEditModel.Id,
 
             QuestionType = questionAdminEditModel.QuestionType,
+            Text = questionAdminEditModel.Text,
             // ModelToDtoPlaceholder
             // Title = questionAdminEditModel.Title,
             // ToDoList = questionAdminEditModel.ToDoList,
