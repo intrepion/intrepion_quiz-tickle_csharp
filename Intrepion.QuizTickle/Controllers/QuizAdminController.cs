@@ -1,8 +1,8 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Entities.Dtos;
-using ApplicationNamePlaceholder.BusinessLogic.Services;
+﻿using Intrepion.QuizTickle.BusinessLogic.Entities.Dtos;
+using Intrepion.QuizTickle.BusinessLogic.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApplicationNamePlaceholder.Controllers;
+namespace Intrepion.QuizTickle.Controllers;
 
 [Route("api/admin/[controller]")]
 [ApiController]
