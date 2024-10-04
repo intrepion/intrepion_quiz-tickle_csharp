@@ -101,6 +101,7 @@ public class AnswerAdminService(ApplicationDbContext applicationDbContext) : IAn
         databaseAnswer.ApplicationUserUpdatedBy = user;
 
         databaseAnswer.CorrectQuestion = answerAdminDto.CorrectQuestion;
+        databaseAnswer.Text = answerAdminDto.Text;
         // EditDatabasePropertyCodePlaceholder
         // databaseAnswer.Title = answerAdminDto.Title;
         // databaseAnswer.NormalizedTitle = answerAdminDto.Title.ToUpperInvariant();
