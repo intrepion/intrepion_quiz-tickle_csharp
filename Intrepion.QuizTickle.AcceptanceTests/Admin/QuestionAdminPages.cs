@@ -16,6 +16,7 @@ public partial class QuestionAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Question Creation");
 
+        await Page.GetByTestId("questionAdminEditText").FillAsync("a question");
         // CreatePropertyCodePlaceholder
         // await Page.GetByTestId("questionAdminEditName").FillAsync("a question");
 
